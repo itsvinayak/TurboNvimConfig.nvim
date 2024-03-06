@@ -32,8 +32,24 @@ require("lazy").setup({
 	require("NeoMinimalVim.plugins.dashboard"),
 	'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 	{"github/copilot.vim"}, -- Copilot AI
+	{"rcarriga/nvim-notify"}, -- Notifications
+	{
+        "kevinhwang91/nvim-ufo",
+        dependencies = "kevinhwang91/promise-async"
+    },
 	require("NeoMinimalVim.plugins.comment"),
 	require("NeoMinimalVim.plugins.neo-tree"),
 	{"wakatime/vim-wakatime"},
-	require("NeoMinimalVim.plugins.which-key")
+	-- Remove the duplicate require statement for "NeoMinimalVim.plugins.which-key"
+	require("NeoMinimalVim.plugins.which-key"),
+	require("NeoMinimalVim.plugins.undotree"),
+	require("NeoMinimalVim.plugins.zen-mode"),
+	require("NeoMinimalVim.plugins.gruvbox")
 })
+
+-- ===============================================================================
+
+
+-- setup
+require("NeoMinimalVim.plugins.ufo-setup")
+require("NeoMinimalVim.plugins.whichKeyMapping")

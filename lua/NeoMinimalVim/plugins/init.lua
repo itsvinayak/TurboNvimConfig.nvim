@@ -40,16 +40,22 @@ require("lazy").setup({
 	require("NeoMinimalVim.plugins.comment"),
 	require("NeoMinimalVim.plugins.neo-tree"),
 	{"wakatime/vim-wakatime"},
-	-- Remove the duplicate require statement for "NeoMinimalVim.plugins.which-key"
 	require("NeoMinimalVim.plugins.which-key"),
 	require("NeoMinimalVim.plugins.undotree"),
 	require("NeoMinimalVim.plugins.zen-mode"),
-	require("NeoMinimalVim.plugins.gruvbox")
+        require("NeoMinimalVim.plugins.gruvbox"),
+	require("NeoMinimalVim.plugins.lsp"),
+	require("NeoMinimalVim.plugins.neoclip"),
+	require("NeoMinimalVim.plugins.telescope")
 })
 
 -- ===============================================================================
 
 
 -- setup
-require("NeoMinimalVim.plugins.ufo-setup")
-require("NeoMinimalVim.plugins.whichKeyMapping")
+require("NeoMinimalVim.plugins.lspSetup")
+require("NeoMinimalVim.plugins.ufoSetup")
+require("NeoMinimalVim.plugins.whichKeySetup")
+require("NeoMinimalVim.plugins.indentBlanklineSetup")
+require("NeoMinimalVim.plugins.telescopeSetup")
+require("NeoMinimalVim.plugins.neoclipSetup")

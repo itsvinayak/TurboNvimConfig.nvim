@@ -29,14 +29,16 @@ To install NeoMinimalVim and set it up as your Neovim configuration, follow thes
 
 - Backup Your Existing Configuration (optional but recommended):
   If you have an existing Neovim configuration that you want to preserve, make sure to back it up. You can follow the backup instructions provided earlier.
+  
   ```bash
-  cp -r ~/.config/nvim ~/nvim_backup
+     cp -r ~/.config/nvim ~/nvim_backup
   ```
 - Clone NeoMinimalVim Repository:
   Clone the NeoMinimalVim repository to your local machine. You can do this using Git by running the following command in your terminal:
-```bash
-git clone https://github.com/itsvinayak/NeoMinimalVim.nvim.git ~/.config/nvim
-```
+  
+  ```bash
+     git clone https://github.com/itsvinayak/NeoMinimalVim.nvim.git ~/.config/nvim
+  ```
 - Launch Neovim:
   Open Neovim by running nvim in your terminal.
 - Install Plugins:

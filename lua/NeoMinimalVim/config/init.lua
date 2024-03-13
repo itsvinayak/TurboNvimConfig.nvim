@@ -7,6 +7,9 @@ vim.g.maplocalleader = " "
 vim.opt.mouse = "a"
 vim.opt.showmode = false
 
+
+
+
 -- Sync clipboard between OS and Neovim - same register
 vim.opt.clipboard = "unnamedplus"
 
@@ -35,8 +38,8 @@ vim.opt.autoindent = true
 vim.opt.autowrite = true
 
 vim.reload_config_on_save = false
-vim.opt.guicursor = ""
 vim.opt.termguicolors = true
+vim.opt.guicursor = "n-v-c:block-Cursor/lCursor-blinkon0,i-ci-ve:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor"
 vim.opt.nu = true
 vim.opt.relativenumber = true
 

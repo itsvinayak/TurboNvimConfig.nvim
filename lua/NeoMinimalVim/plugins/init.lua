@@ -46,7 +46,8 @@ require("lazy").setup({
         require("NeoMinimalVim.plugins.gruvbox"),
 	require("NeoMinimalVim.plugins.lsp"),
 	require("NeoMinimalVim.plugins.neoclip"),
-	require("NeoMinimalVim.plugins.telescope")
+	require("NeoMinimalVim.plugins.telescope"),
+	require("NeoMinimalVim.plugins.git")
 })
 
 -- ===============================================================================

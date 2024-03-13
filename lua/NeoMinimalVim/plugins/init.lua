@@ -47,7 +47,8 @@ require("lazy").setup({
 	require("NeoMinimalVim.plugins.lsp"),
 	require("NeoMinimalVim.plugins.neoclip"),
 	require("NeoMinimalVim.plugins.telescope"),
-	require("NeoMinimalVim.plugins.git")
+	require("NeoMinimalVim.plugins.git"),
+	require("NeoMinimalVim.plugins.conform"),
 })
 
 -- ===============================================================================
@@ -60,3 +61,4 @@ require("NeoMinimalVim.plugins.whichKeySetup")
 require("NeoMinimalVim.plugins.indentBlanklineSetup")
 require("NeoMinimalVim.plugins.telescopeSetup")
 require("NeoMinimalVim.plugins.neoclipSetup")
+require("NeoMinimalVim.plugins.conformSetup")

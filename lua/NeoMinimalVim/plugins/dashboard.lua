@@ -1,5 +1,4 @@
 local header = [[
-                                        ▟▙            
                                         ▝▘            
 ██▃▅▇█▆▖  ▗▟████▙▖   ▄████▄   ██▄  ▄██  ██  ▗▟█▆▄▄▆█▙▖
 ██▛▔ ▝██  ██▄▄▄▄██  ██▛▔▔▜██  ▝██  ██▘  ██  ██▛▜██▛▜██
@@ -16,7 +15,7 @@ return {
 		opts = function()
 			local logo = header
 
-			logo = string.rep("\n", 8) .. logo .. "\n ᥇ꪗ ꪜ꠸ꪀꪖꪗꪖᛕ \n\n"
+			logo = string.rep("\n", 8) .. logo
 
 			local opts = {
 				theme = "doom",

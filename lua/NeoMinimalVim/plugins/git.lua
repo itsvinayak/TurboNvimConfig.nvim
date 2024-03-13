@@ -1,8 +1,5 @@
 return {{
-    "tpope/vim-fugitive",
-    config = function()
-      require("vim-fugitive").setup()
-    end
+    "tpope/vim-fugitive"
 }, {
     "lewis6991/gitsigns.nvim",
     config = function()

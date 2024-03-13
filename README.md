@@ -18,12 +18,12 @@
 </p>
 </div>
 
-
 ---
+## Introduction
 
-- **[<kbd> <br> Install <br> </kbd>][Install]** 
-- **[<kbd> <br> Configure <br> </kbd>][Configure]** 
-- **[<kbd> <br> Troubleshooting <br> </kbd>][Troubleshoot]** 
-- **[<kbd> <br> Contribute <br> </kbd>][Contribute]**
+NeoMinimalVim is a minimalist starting point for configuring Neovim, designed to offer an IDE-like experience. Unlike full-fledged Neovim distributions, NeoMinimalVim is not a Neovim distribution in itself but rather a foundation upon which you can build your personalized Neovim setup tailored to your specific workflow and preferences. Use it as a launching pad to craft your ideal Neovim environment.
 
----
+## Installation
+
+### Post Installation
+### Installation Of NeoMinimalVim

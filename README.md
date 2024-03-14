@@ -23,6 +23,9 @@
 
 NeoMinimalVim is a minimalist starting point for configuring Neovim, designed to offer an IDE-like experience. Unlike full-fledged Neovim distributions, NeoMinimalVim is not a Neovim distribution in itself but rather a foundation upon which you can build your personalized Neovim setup tailored to your specific workflow and preferences. Use it as a launching pad to craft your ideal Neovim environment.
 
+![Screenshot from 2024-03-14 23-36-51](https://github.com/itsvinayak/NeoMinimalVim.nvim/assets/33996594/a068dea3-58d6-4c23-8cf2-3b19f959964f)
+
+
 ## Installation
 
 To install NeoMinimalVim and set it up as your Neovim configuration, follow these steps:

@@ -39,12 +39,13 @@ require('lazy').setup {
   require 'NeoMinimalVim.plugins.which-key',
   require 'NeoMinimalVim.plugins.undotree',
   require 'NeoMinimalVim.plugins.zen-mode',
-  require 'NeoMinimalVim.plugins.gruvbox',
+  require 'NeoMinimalVim.plugins.colorscheme',
   require 'NeoMinimalVim.plugins.lsp',
   require 'NeoMinimalVim.plugins.neoclip',
   require 'NeoMinimalVim.plugins.telescope',
   require 'NeoMinimalVim.plugins.git',
   require 'NeoMinimalVim.plugins.conform',
+  require 'NeoMinimalVim.plugins.treesitter',
 }
 
 -- ===============================================================================

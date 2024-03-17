@@ -17,6 +17,18 @@ return {
         indicator_icon = '▎',
         separator_style = 'thin',
         animation = true,
+        clickable = true,
+        tabpages = true,
+        maximum_padding = 2,
+        minimum_padding = 2,
+        maximum_length = 20,
+        enable_devicons = true,
+        filter = function(bufnum)
+          if vim.fn.bufname(bufnum) == '' then
+            return false
+          end
+          return true
+        end,
       }
       -- keymap
       local map = vim.api.nvim_set_keymap

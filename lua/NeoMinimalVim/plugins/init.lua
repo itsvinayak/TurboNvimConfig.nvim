@@ -47,6 +47,7 @@ require('lazy').setup {
   require 'NeoMinimalVim.plugins.conform',
   require 'NeoMinimalVim.plugins.treesitter',
   require 'NeoMinimalVim.plugins.barbar',
+  require 'NeoMinimalVim.plugins.none-ls',
 }
 
 -- ===============================================================================

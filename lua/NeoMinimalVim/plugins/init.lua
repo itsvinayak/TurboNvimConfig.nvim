@@ -23,15 +23,12 @@ vim.opt.rtp:prepend(lazypath)
 -- ============================================================================
 require('lazy').setup {
   require 'NeoMinimalVim.plugins.lualine',
+  require 'NeoMinimalVim.plugins.lsp',
   require 'NeoMinimalVim.plugins.debug',
   require 'NeoMinimalVim.plugins.dashboard',
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   { 'github/copilot.vim' }, -- Copilot AI
   { 'rcarriga/nvim-notify' }, -- Notifications
-  {
-    'kevinhwang91/nvim-ufo',
-    dependencies = 'kevinhwang91/promise-async',
-  },
   require 'NeoMinimalVim.plugins.comment',
   require 'NeoMinimalVim.plugins.neo-tree',
   require 'NeoMinimalVim.plugins.indent-blankline',
@@ -40,23 +37,13 @@ require('lazy').setup {
   require 'NeoMinimalVim.plugins.undotree',
   require 'NeoMinimalVim.plugins.zen-mode',
   require 'NeoMinimalVim.plugins.colorscheme',
-  require 'NeoMinimalVim.plugins.lsp',
-  require 'NeoMinimalVim.plugins.neoclip',
   require 'NeoMinimalVim.plugins.telescope',
   require 'NeoMinimalVim.plugins.git',
   require 'NeoMinimalVim.plugins.conform',
   require 'NeoMinimalVim.plugins.treesitter',
   require 'NeoMinimalVim.plugins.barbar',
   require 'NeoMinimalVim.plugins.none-ls',
+  require 'NeoMinimalVim.plugins.ufo',
 }
 
 -- ===============================================================================
-
--- setup
-require 'NeoMinimalVim.plugins.lspSetup'
-require 'NeoMinimalVim.plugins.ufoSetup'
-require 'NeoMinimalVim.plugins.whichKeySetup'
-require 'NeoMinimalVim.plugins.indentBlanklineSetup'
-require 'NeoMinimalVim.plugins.telescopeSetup'
-require 'NeoMinimalVim.plugins.neoclipSetup'
-require 'NeoMinimalVim.plugins.conformSetup'

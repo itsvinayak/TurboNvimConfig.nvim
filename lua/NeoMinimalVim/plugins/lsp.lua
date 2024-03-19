@@ -70,7 +70,6 @@ function setup.config()
   local mason = require 'mason'
   local mason_lspconfig = require 'mason-lspconfig'
   local cmp = require 'cmp'
-  local lspconfig = require 'lspconfig'
   local lsp_zero = require 'lsp-zero'
   local luasnip = require 'luasnip'
 

@@ -1,7 +1,5 @@
 local setup = {
   'VonHeikemen/lsp-zero.nvim',
-  event = 'InsertEnter',
-  branch = 'v2.x',
   dependencies = { -- LSP Support
     { 'neovim/nvim-lspconfig' }, -- Required
     { 'zbirenbaum/copilot-cmp' },
@@ -24,6 +22,50 @@ local setup = {
   },
 }
 
+function wkSetup()
+  local wk = require 'which-key'
+  wk.register {
+    ['<leader>la'] = { '<cmd>lua vim.lsp.buf.code_action()<cr>', 'Code Action' },
+    ['<leader>lf'] = {
+      "<cmd>lua vim.lsp.buf.format({async = true, filter = function(client) return client.name ~= 'typescript-tools' end})<cr>",
+      'Format',
+    },
+    ['<leader>li'] = { '<cmd>LspInfo<cr>', 'Info' },
+    ['<leader>lj'] = { '<cmd>lua vim.diagnostic.goto_next()<cr>', 'Next Diagnostic' },
+    ['<leader>lh'] = { "<cmd>lua require('user.lspconfig').toggle_inlay_hints()<cr>", 'Hints' },
+    ['<leader>lk'] = { '<cmd>lua vim.diagnostic.goto_prev()<cr>', 'Prev Diagnostic' },
+    ['<leader>ll'] = { '<cmd>lua vim.lsp.codelens.run()<cr>', 'CodeLens Action' },
+    ['<leader>lq'] = { '<cmd>lua vim.diagnostic.setloclist()<cr>', 'Quickfix' },
+    ['<leader>lr'] = { '<cmd>lua vim.lsp.buf.rename()<cr>', 'Rename' },
+  }
+
+  wk.register {
+    ['<leader>la'] = {
+      name = 'LSP',
+      a = { '<cmd>lua vim.lsp.buf.code_action()<cr>', 'Code Action', mode = 'v' },
+    },
+  }
+end
+
+function lsp_keyMapping(bufnr)
+  local opts = { noremap = true, silent = true }
+
+  local keymap = vim.api.nvim_buf_set_keymap
+
+  keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+  keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+  keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+  keymap(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+  keymap(bufnr, 'n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+  keymap(bufnr, 'n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+  keymap(bufnr, 'n', '<leader>ws', '<cmd>lua vim.lsp.buf.workspace_symbol()<CR>', opts)
+  keymap(bufnr, 'n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+  keymap(bufnr, 'n', '<leader>vd', '<cmd>lua vim.lsp.diagnostic.setloclist()<CR>', opts)
+  keymap(bufnr, 'n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
+  keymap(bufnr, 'n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
+  keymap(bufnr, 'n', 'gl', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
+end
+
 function setup.config()
   local mason = require 'mason'
   local mason_lspconfig = require 'mason-lspconfig'
@@ -32,7 +74,8 @@ function setup.config()
   local lsp_zero = require 'lsp-zero'
   local luasnip = require 'luasnip'
 
-  -- hilighting for LSP diagnostics
+  wkSetup()
+  -- highting for LSP diagnostics
   vim.api.nvim_set_hl(0, 'CmpItemKindCopilot', {
     fg = '#6CC644',
   })
@@ -55,7 +98,7 @@ function setup.config()
   lsp_zero.preset 'formatting'
 
   -- Ensure installation of multiple language servers
-  require('mason').setup {}
+  mason.setup {}
   mason_lspconfig.setup {
     ensure_installed = { 'tsserver', 'rust_analyzer', 'lua_ls', 'eslint', 'dockerls', 'marksman', 'html', 'jsonls' },
     handlers = {
@@ -63,48 +106,34 @@ function setup.config()
     },
   }
 
+  require('lspconfig.ui.windows').default_options.border = 'rounded'
+
+  -- nvim diagnostic config
+  local default_diagnostic_config = {
+    underline = true,
+    severity_sort = true,
+    float = {
+      focusable = true,
+      style = 'minimal',
+      border = 'rounded',
+      source = 'always',
+      header = '',
+      prefix = '',
+    },
+  }
+
+  vim.diagnostic.config(default_diagnostic_config)
+
+  for _, sign in ipairs(vim.tbl_get(vim.diagnostic.config(), 'signs', 'values') or {}) do
+    vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = sign.name })
+  end
+
+  vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' })
+  vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'rounded' })
+
   -- Set LSP keybindings
   lsp_zero.on_attach(function(client, bufnr)
-    local opts = {
-      buffer = bufnr,
-      remap = false,
-    }
-
-    local keymap = vim.keymap
-    local diagnostic = vim.diagnostic
-    keymap.set('n', 'gr', function()
-      vim.lsp.buf.references()
-    end, opts)
-    keymap.set('n', 'gd', function()
-      vim.lsp.buf.definition()
-    end, opts)
-    keymap.set('n', 'K', function()
-      vim.lsp.buf.hover()
-    end, opts)
-    keymap.set('n', '<leader>vws', function()
-      vim.lsp.buf.workspace_symbol()
-    end, opts)
-    keymap.set('n', '<leader>vd', function()
-      diagnostic.setloclist()
-    end, opts)
-    keymap.set('n', '[d', function()
-      diagnostic.goto_next()
-    end, opts)
-    keymap.set('n', ']d', function()
-      diagnostic.goto_prev()
-    end, opts)
-    keymap.set('n', '<leader>vca', function()
-      vim.lsp.buf.code_action()
-    end, opts)
-    keymap.set('n', '<leader>vrr', function()
-      vim.lsp.buf.references()
-    end, opts)
-    keymap.set('n', '<leader>vrn', function()
-      vim.lsp.buf.rename()
-    end, opts)
-    keymap.set('i', '<C-h>', function()
-      vim.lsp.buf.signature_help()
-    end, opts)
+    lsp_keyMapping(bufnr)
   end)
 
   -- Set up nvim-cmp
@@ -195,4 +224,3 @@ function setup.config()
 end
 
 return setup
-

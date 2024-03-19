@@ -7,13 +7,15 @@ return {
       conform.setup {
         formatters_by_ft = {
           lua = { 'stylua' },
-          javascript = { 'prettierd', 'prettier' },
-          javascriptreact = { 'prettierd', 'prettier' },
-          typescript = { 'prettierd', 'prettier' },
-          typescriptreact = { 'prettierd', 'prettier' },
-          json = { 'prettierd', 'prettier' },
+          javascript = { 'prettierd', 'prettier', 'eslint_d' },
+          javascriptreact = { 'prettierd', 'prettier', 'eslint_d' },
+          typescript = { 'prettierd', 'prettier', 'eslint_d' },
+          typescriptreact = { 'prettierd', 'prettier', 'eslint_d' },
+          json = { 'prettierd', 'prettier', 'jq' },
           markdown = { 'prettierd', 'prettier' },
           html = { 'htmlbeautifier' },
+          ['*'] = { 'codespell' },
+          ['_'] = { 'trim_whitespace' },
         },
         format_on_save = function(bufnr)
           -- Disable with a global or buffer-local variable

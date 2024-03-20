@@ -44,7 +44,8 @@ require('lazy').setup {
   require 'NeoMinimalVim.plugins.barbar',
   require 'NeoMinimalVim.plugins.ufo',
   require 'NeoMinimalVim.plugins.colorizer',
-  require 'NeoMinimalVim.plugins.surround',
+  require 'NeoMinimalVim.plugins.mini',
+  require 'NeoMinimalVim.plugins.neoscroll',
 }
 
 -- ===============================================================================

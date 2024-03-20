@@ -46,6 +46,7 @@ require('lazy').setup {
   require 'NeoMinimalVim.plugins.colorizer',
   require 'NeoMinimalVim.plugins.mini',
   require 'NeoMinimalVim.plugins.neoscroll',
+  require 'NeoMinimalVim.plugins.satellite',
 }
 
 -- ===============================================================================

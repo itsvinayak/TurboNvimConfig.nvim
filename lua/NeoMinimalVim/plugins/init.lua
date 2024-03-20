@@ -43,6 +43,7 @@ require('lazy').setup {
   require 'NeoMinimalVim.plugins.treesitter',
   require 'NeoMinimalVim.plugins.barbar',
   require 'NeoMinimalVim.plugins.ufo',
+  require 'NeoMinimalVim.plugins.colorizer',
 }
 
 -- ===============================================================================

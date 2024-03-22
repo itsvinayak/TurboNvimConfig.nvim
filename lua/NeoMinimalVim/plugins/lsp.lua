@@ -99,7 +99,7 @@ function setup.config()
   -- Ensure installation of multiple language servers
   mason.setup {}
   mason_lspconfig.setup {
-    ensure_installed = { 'tsserver', 'rust_analyzer', 'lua_ls', 'eslint', 'dockerls', 'marksman', 'html', 'jsonls' },
+    ensure_installed = { 'tsserver', 'rust_analyzer', 'lua_ls', 'eslint_d', 'dockerls', 'marksman', 'html-lsp', 'jsonls' },
     handlers = {
       lsp_zero.default_setup,
     },

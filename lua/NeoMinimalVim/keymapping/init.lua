@@ -35,7 +35,7 @@ vim.api.nvim_set_keymap('n', '<leader>nt', '<Cmd>Neotree toggle<CR>', opts)
 
 -- Reload config mapping
 function keymap_function()
-  -- require 'notify'('file sourced . . .', 'info')
+  require('fidget').notify('Reloading config', vim.log.levels.INFO)
   vim.cmd 'so'
 end
 

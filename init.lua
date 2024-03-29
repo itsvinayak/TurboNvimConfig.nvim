@@ -6,5 +6,6 @@ require 'custom.plugins.init'
 vim.cmd [[command! CheckHealth lua require('main.health').check()]]
 vim.o.background = 'dark' -- or "light" for light mode
 
--- require 'notify'('configuration loaded . . .', 'info')
+require('fidget').notify('NeoMinimalVim - nvim config loaded', vim.log.levels.INFO)
+
 vim.cmd 'colorscheme gruvbox'

@@ -28,7 +28,6 @@ require('lazy').setup {
   require 'NeoMinimalVim.plugins.dashboard',
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   { 'github/copilot.vim' }, -- Copilot AI
-  { 'rcarriga/nvim-notify' }, -- Notifications
   require 'NeoMinimalVim.plugins.comment',
   require 'NeoMinimalVim.plugins.neo-tree',
   require 'NeoMinimalVim.plugins.indent-blankline',
@@ -47,6 +46,7 @@ require('lazy').setup {
   require 'NeoMinimalVim.plugins.mini',
   require 'NeoMinimalVim.plugins.neoscroll',
   require 'NeoMinimalVim.plugins.satellite',
+  require 'NeoMinimalVim.plugins.fidget',
 }
 
 -- ===============================================================================

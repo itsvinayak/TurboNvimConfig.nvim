@@ -22,7 +22,7 @@ local setup = {
   },
 }
 
-function wkSetup()
+local function wkSetup()
   local wk = require 'which-key'
   wk.register {
     ['<leader>la'] = { '<cmd>lua vim.lsp.buf.code_action()<cr>', 'Code Action' },
@@ -47,7 +47,7 @@ function wkSetup()
   }
 end
 
-function lsp_keyMapping(bufnr)
+local function lsp_keyMapping(bufnr)
   local opts = { noremap = true, silent = true }
 
   local keymap = vim.api.nvim_buf_set_keymap
@@ -99,7 +99,7 @@ function setup.config()
   -- Ensure installation of multiple language servers
   mason.setup {}
   mason_lspconfig.setup {
-    ensure_installed = { 'tsserver', 'rust_analyzer', 'lua_ls', 'eslint_d', 'dockerls', 'marksman', 'html-lsp', 'jsonls' },
+    ensure_installed = { 'tsserver', 'rust_analyzer', 'lua_ls' },
     handlers = {
       lsp_zero.default_setup,
     },

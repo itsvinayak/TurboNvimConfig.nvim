@@ -22,32 +22,35 @@ vim.opt.rtp:prepend(lazypath)
 -- Plugins
 -- ============================================================================
 require('lazy').setup {
-  require 'TurboNvimConfig.plugins.lualine',
-  require 'TurboNvimConfig.plugins.lsp',
-  require 'TurboNvimConfig.plugins.debug',
-  require 'TurboNvimConfig.plugins.dashboard',
-  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
-  { 'github/copilot.vim' }, -- Copilot AI
-  require 'TurboNvimConfig.plugins.comment',
-  require 'TurboNvimConfig.plugins.neo-tree',
-  require 'TurboNvimConfig.plugins.indent-blankline',
-  { 'wakatime/vim-wakatime' },
-  require 'TurboNvimConfig.plugins.which-key',
-  require 'TurboNvimConfig.plugins.undotree',
-  require 'TurboNvimConfig.plugins.zen-mode',
-  require 'TurboNvimConfig.plugins.colorscheme',
-  require 'TurboNvimConfig.plugins.telescope',
-  require 'TurboNvimConfig.plugins.git',
-  require 'TurboNvimConfig.plugins.conform',
-  require 'TurboNvimConfig.plugins.treesitter',
-  require 'TurboNvimConfig.plugins.barbar',
-  require 'TurboNvimConfig.plugins.ufo',
-  require 'TurboNvimConfig.plugins.colorizer',
-  require 'TurboNvimConfig.plugins.mini',
-  require 'TurboNvimConfig.plugins.neoscroll',
-  require 'TurboNvimConfig.plugins.satellite',
-  require 'TurboNvimConfig.plugins.fidget',
-  require 'TurboNvimConfig.plugins.trouble',
+  spec = {
+    require 'TurboNvimConfig.plugins.lualine',
+    require 'TurboNvimConfig.plugins.lsp',
+    require 'TurboNvimConfig.plugins.debug',
+    require 'TurboNvimConfig.plugins.dashboard',
+    'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+    { 'github/copilot.vim' }, -- Copilot AI
+    require 'TurboNvimConfig.plugins.comment',
+    require 'TurboNvimConfig.plugins.neo-tree',
+    require 'TurboNvimConfig.plugins.indent-blankline',
+    { 'wakatime/vim-wakatime' },
+    require 'TurboNvimConfig.plugins.which-key',
+    require 'TurboNvimConfig.plugins.undotree',
+    require 'TurboNvimConfig.plugins.zen-mode',
+    require 'TurboNvimConfig.plugins.colorscheme',
+    require 'TurboNvimConfig.plugins.telescope',
+    require 'TurboNvimConfig.plugins.git',
+    require 'TurboNvimConfig.plugins.conform',
+    require 'TurboNvimConfig.plugins.treesitter',
+    require 'TurboNvimConfig.plugins.barbar',
+    require 'TurboNvimConfig.plugins.ufo',
+    require 'TurboNvimConfig.plugins.colorizer',
+    require 'TurboNvimConfig.plugins.mini',
+    require 'TurboNvimConfig.plugins.neoscroll',
+    require 'TurboNvimConfig.plugins.satellite',
+    require 'TurboNvimConfig.plugins.fidget',
+    require 'TurboNvimConfig.plugins.trouble',
+  },
+  checker = { enabled = true },
 }
 
 -- ===============================================================================

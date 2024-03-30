@@ -29,6 +29,7 @@ local setup = {
       'aaronhallaert/advanced-git-search.nvim',
       dependencies = { 'nvim-telescope/telescope.nvim', 'tpope/vim-fugitive', 'tpope/vim-rhubarb' },
     },
+    'jemag/telescope-diff.nvim',
   },
 }
 
@@ -73,6 +74,13 @@ function setup.config()
   vim.keymap.set('n', '<leader>gb', builtin.git_bcommits, {
     desc = 'Search Git Commits for Buffer',
   })
+
+  vim.keymap.set('n', '<leader>sC', function()
+    require('telescope').extensions.diff.diff_files { hidden = true }
+  end, { desc = 'Compare 2 files' })
+  vim.keymap.set('n', '<leader>sc', function()
+    require('telescope').extensions.diff.diff_current { hidden = true }
+  end, { desc = 'Compare file with current' })
 
   -- Clone the default Telescope configuration
   local vimgrep_arguments = { unpack(telescopeConfig.values.vimgrep_arguments) }
@@ -149,6 +157,7 @@ function setup.config()
   require('telescope').load_extension 'advanced_git_search'
   require('telescope').load_extension 'live_grep_args'
   require('telescope').load_extension 'colors'
+  require('telescope').load_extension 'diff'
 end
 
 return setup

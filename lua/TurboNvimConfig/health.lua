@@ -30,8 +30,8 @@ end
 
 return {
 	check = function()
-	-- NeoMinimalVim.nvim
-		vim.health.start("NeoMinimalVim.nvim")
+	-- TurboNvimConfig.nvim
+		vim.health.start("TurboNvimConfig.nvim")
 
 		vim.health.info([[NOTE: Not every warning is a 'must-fix' in `:checkhealth`
 

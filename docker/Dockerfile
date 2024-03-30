@@ -33,7 +33,7 @@ RUN cd $NVIM_DIR \
 ENV PATH=$NVIM_INSTALL_DIR/bin:$PATH
 
 
-RUN git clone https://github.com/itsvinayak/NeoMinimalVim.nvim.git /root/.config/nvim
+RUN git clone https://github.com/itsvinayak/TurboNvimConfig.nvim.git /root/.config/nvim
 
 CMD ["nvim"]
 

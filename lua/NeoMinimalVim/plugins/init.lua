@@ -47,6 +47,7 @@ require('lazy').setup {
   require 'NeoMinimalVim.plugins.neoscroll',
   require 'NeoMinimalVim.plugins.satellite',
   require 'NeoMinimalVim.plugins.fidget',
+  require 'NeoMinimalVim.plugins.trouble',
 }
 
 -- ===============================================================================

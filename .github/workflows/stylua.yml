@@ -25,4 +25,4 @@ jobs:
         rm stylua-0.11.0-linux.zip
 
     - name: Format Lua files
-      run: stylua --check **/*.lua
+      run: stylua --check *.lua

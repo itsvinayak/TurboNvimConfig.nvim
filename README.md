@@ -19,6 +19,13 @@
 
 ---
 
+# Index
+
+  1. [Introduction](#introduction)
+  2. [Installation](#installation)
+  3. [Neovim Installation and Configuration via Docker](#neovim-installation-and-configuration-via-docker)
+  4. [Recommended GUI Client](#recommended-gui-client)
+
 ## Introduction
 
 TurboNvimConfig is a minimalist starting point for configuring Neovim, designed to offer an IDE-like experience. Unlike full-fledged Neovim distributions, TurboNvimConfig is not a Neovim distribution in itself but rather a foundation upon which you can build your personalized Neovim setup tailored to your specific workflow and preferences. Use it as a launching pad to craft your ideal Neovim environment.
@@ -53,3 +60,38 @@ To install TurboNvimConfig and set it up as your Neovim configuration, follow th
   After making any customizations or adjustments to the configuration, restart Neovim to apply the changes.
 
 That's it! You now have TurboNvimConfig installed and configured as your Neovim setup. Enjoy your streamlined and minimalist Neovim environment!
+
+## Neovim Installation and Configuration via Docker
+
+TurboNvimConfig can also be built and run within a Docker container. Below are the steps to build and run TurboNvimConfig using Docker:
+
+- Clone TurboNvimConfig Repository:
+
+Clone the TurboNvimConfig repository to your local machine. You can do this using Git by running the following command in your terminal:
+
+```bash
+  git clone https://github.com/itsvinayak/TurboNvimConfig.nvim.git
+```
+
+- Build Docker Image:
+  To build the Docker image, navigate to the directory containing the Dockerfile. In this case, it's the Docker folder within the TurboNvimConfig repository.
+  
+  This folder contains two essential files:
+  - Dockerfile: This file specifies the steps to build the Docker image with Neovim and TurboNvimConfig installed.
+  - run-docker.sh: This script simplifies the process of building and running the Docker container. It automates the commands mentioned above.
+
+- Run run-docker.sh
+
+Simply execute the following command in your terminal:
+
+```bash
+  ./run-docker.sh
+```
+
+## Recommended GUI Client
+
+For users preferring a graphical interface for managing Neovim, the following list of recommended GUI clients is provided:
+
+- [neovide](https://neovide.dev/)
+- [nvim-ui](https://github.com/sakhnik/nvim-ui)
+- [Neovim Qt](https://github.com/equalsraf/neovim-qt)

@@ -49,6 +49,7 @@ require('lazy').setup {
     require 'TurboNvimConfig.plugins.satellite',
     require 'TurboNvimConfig.plugins.fidget',
     require 'TurboNvimConfig.plugins.trouble',
+    require 'TurboNvimConfig.plugins.leetcode',
   },
   checker = { enabled = true },
 }

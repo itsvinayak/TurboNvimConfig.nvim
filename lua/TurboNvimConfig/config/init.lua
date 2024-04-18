@@ -43,7 +43,7 @@ vim.opt.relativenumber = true
 vim.cmd 'filetype plugin on'
 vim.cmd 'syntax on'
 
--- hidding tmux status line
+-- hiding tmux status line
 vim.cmd [[
   augroup DisableTmuxStatus
     autocmd!
@@ -56,11 +56,11 @@ vim.cmd [[
 local yank_group = 'myYankGroup'
 
 -- Set up the autocmd for TextYankPost event
-vim.api.nvim_exec([[
+vim.api.nvim_exec2([[
   augroup ]] .. yank_group .. [[
     autocmd!
     autocmd TextYankPost * lua vim.highlight.on_yank({ higroup = 'IncSearch', timeout = 40 })
   augroup END
-]], false)
+]], {})
 
 return {}

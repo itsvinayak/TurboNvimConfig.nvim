@@ -52,15 +52,4 @@ vim.cmd [[
   augroup END
 ]]
 
--- Define a group for the autocmd
-local yank_group = 'myYankGroup'
-
--- Set up the autocmd for TextYankPost event
-vim.api.nvim_exec2([[
-  augroup ]] .. yank_group .. [[
-    autocmd!
-    autocmd TextYankPost * lua vim.highlight.on_yank({ higroup = 'IncSearch', timeout = 40 })
-  augroup END
-]], {})
-
 return {}

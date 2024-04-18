@@ -12,4 +12,4 @@ vim.o.background = 'dark' -- or "light" for light mode
 
 require('fidget').notify('TurboNvimConfig - nvim config loaded', vim.log.levels.INFO)
 
--- vim.cmd 'colorscheme gruvbox'
+vim.cmd("colorscheme gruvbox")

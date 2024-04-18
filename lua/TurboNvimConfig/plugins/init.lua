@@ -44,7 +44,6 @@ require('lazy').setup {
     require 'TurboNvimConfig.plugins.barbar',
     require 'TurboNvimConfig.plugins.ufo',
     require 'TurboNvimConfig.plugins.colorizer',
-    require 'TurboNvimConfig.plugins.mini',
     require 'TurboNvimConfig.plugins.neoscroll',
     require 'TurboNvimConfig.plugins.satellite',
     require 'TurboNvimConfig.plugins.fidget',

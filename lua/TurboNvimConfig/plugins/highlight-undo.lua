@@ -2,7 +2,7 @@ local setup = {
   'tzachar/highlight-undo.nvim',
 }
 
-function setup.config()
+function setup.opts()
   require('highlight-undo').setup {
     duration = 300,
     undo = {

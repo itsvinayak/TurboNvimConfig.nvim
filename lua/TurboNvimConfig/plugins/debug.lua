@@ -63,8 +63,8 @@ function setup.config()
   }
 
   -- Basic debugging keymaps, feel free to change to your liking!
-  vim.keymap.set('n', 'dc', dap.continue, { desc = 'Debug: Start/Continue' })
-  vim.keymap.set('n', 'di', dap.step_into, { desc = 'Debug: Step Into' })
+  vim.keymap.set('n', 'dsc', dap.continue, { desc = 'Debug: Start/Continue' })
+  vim.keymap.set('n', 'dsi', dap.step_into, { desc = 'Debug: Step Into' })
   vim.keymap.set('n', 'ds', dap.step_over, { desc = 'Debug: Step Over' })
   vim.keymap.set('n', 'dso', dap.step_out, { desc = 'Debug: Step Out' })
   vim.keymap.set('n', '<leader>b', dap.toggle_breakpoint, { desc = 'Debug: Toggle Breakpoint' })

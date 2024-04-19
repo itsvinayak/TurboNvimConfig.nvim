@@ -25,6 +25,7 @@ vim.api.nvim_set_keymap('n', ':Q', ':q!', opts)
 vim.api.nvim_set_keymap('n', ':W', ':w!', opts)
 vim.api.nvim_set_keymap('n', '<leader>f', ':lua vim.lsp.buf.format()<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>h', '<Cmd>nohlsearch<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader>sr', ':lua vim.lsp.buf.rename()<CR>', opts)
 vim.api.nvim_set_keymap('n', '<C-k>', '<Cmd>cnext<CR>zz', opts)
 vim.api.nvim_set_keymap('n', '<C-j>', '<Cmd>cprev<CR>zz', opts)
 vim.api.nvim_set_keymap('n', '<leader>k', '<Cmd>rlnext<CR>zz', opts)
@@ -34,11 +35,11 @@ vim.api.nvim_set_keymap('n', '<leader>x', '<Cmd>!chmod +x %<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>nt', '<Cmd>Neotree toggle<CR>', opts)
 
 -- Reload config mapping
-function keymap_function()
+function Reload_config_function()
   require('fidget').notify('Reloading config', vim.log.levels.INFO)
   vim.cmd 'so'
 end
 
-vim.api.nvim_set_keymap('n', '<leader><leader>', ':lua keymap_function()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<leader><leader>', ':lua Reload_config_function()<CR>', opts)
 
 return {}

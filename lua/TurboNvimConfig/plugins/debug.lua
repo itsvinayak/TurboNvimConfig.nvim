@@ -130,7 +130,7 @@ function setup.config()
     },
   }
 
-  vim.keymap.set('n', 'dui', dapui.toggle, { desc = 'Debug: See last session result.' })
+  vim.keymap.set('n', 'dui', dapui.toggle, { desc = 'Debug: Toggle UI' })
 
   dap.listeners.after.event_initialized['dapui_config'] = dapui.open
   dap.listeners.before.event_terminated['dapui_config'] = dapui.close

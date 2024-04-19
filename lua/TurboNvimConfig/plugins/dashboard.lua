@@ -15,8 +15,7 @@ return {
     opts = function()
       local logo = header
 
-      logo = string.rep('\n', 8) .. logo
-
+      logo = string.rep('\n', 2) .. logo
       local opts = {
         theme = 'doom',
         hide = {
@@ -30,37 +29,49 @@ return {
             {
               action = 'Telescope find_files',
               desc = ' Find file',
-              icon = '󰮗',
+              icon = '󰈞',
               key = 'f',
             },
             {
               action = 'ene | startinsert',
               desc = ' New file',
-              icon = ' ',
+              icon = '',
               key = 'n',
             },
             {
               action = 'Telescope oldfiles',
               desc = ' Recent files',
-              icon = ' ',
+              icon = '',
               key = 'r',
             },
             {
               action = 'Telescope live_grep',
               desc = ' Find text',
-              icon = '󰗧',
+              icon = '󱙔',
               key = 'g',
+            },
+            {
+              action = 'Explore',
+              desc = ' Browse files',
+              icon = '',
+              key = 'b',
+            },
+            {
+              action = '<cmd>Explore ~/.config/nvim <cr>',
+              desc = ' Edit config',
+              icon = '',
+              key = 'e',
             },
             {
               action = 'Lazy',
               desc = ' Lazy',
-              icon = '󰒲 ',
+              icon = '󰒲',
               key = 'l',
             },
             {
               action = 'qa',
               desc = ' Quit',
-              icon = ' ',
+              icon = '󰿅',
               key = 'q',
             },
           },

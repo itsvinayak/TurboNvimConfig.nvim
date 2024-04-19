@@ -114,18 +114,18 @@ function setup.config()
   -- Dap UI setup
   -- For more information, see |:help nvim-dap-ui|
   dapui.setup {
-    icons = { expanded = '▾', collapsed = '▸', current_frame = '*' },
+    icons = { expanded = ' ▾ ', collapsed = ' ▸ ', current_frame = ' * ' },
     controls = {
       icons = {
-        pause = '⏸',
-        play = '▶',
-        step_into = '⏎',
-        step_over = '⏭',
-        step_out = '⏮',
-        step_back = 'b',
-        run_last = '▶▶',
-        terminate = '⏹',
-        disconnect = '⏏',
+        pause = ' ⏸ ',
+        play = ' ▶ ',
+        step_into = ' ⏎ ',
+        step_over = ' ⏭ ',
+        step_out = ' ⏮ ',
+        step_back = ' b ',
+        run_last = ' ▶▶ ',
+        terminate = ' ⏹ ',
+        disconnect = ' ⏏ ',
       },
     },
   }

@@ -2,6 +2,7 @@ return {
   {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
+    event = 'InsertEnter',
     config = function()
       local configs = require 'nvim-treesitter.configs'
 

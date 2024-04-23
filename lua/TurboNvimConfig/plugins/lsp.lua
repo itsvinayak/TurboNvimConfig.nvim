@@ -1,5 +1,6 @@
 local setup = {
   'VonHeikemen/lsp-zero.nvim',
+  event = 'InsertEnter',
   dependencies = { -- LSP Support
     { 'neovim/nvim-lspconfig' }, -- Required
     { 'zbirenbaum/copilot-cmp' },

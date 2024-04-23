@@ -18,7 +18,7 @@ local check_external_reqs = function()
     local is_executable = vim.fn.executable(exe) == 1
     if is_executable then
       vim.health.ok(string.format("Found executable: '%s'", exe))
-    elseif exe == 'pyright' or exe == 'tsserver' or exec == 'rust_analyzer' then
+    elseif exe == 'pyright' or exe == 'tsserver' or exe == 'rust_analyzer' then
       vim.health.warn(string.format("Could not find language server: '%s'", exe))
     else
       vim.health.warn(string.format("Could not find executable: '%s'", exe))

@@ -20,6 +20,7 @@ local setup = {
     { 'hrsh7th/cmp-path' },
     { 'hrsh7th/cmp-cmdline' },
     { 'saadparwaiz1/cmp_luasnip' },
+    { 'onsails/lspkind-nvim' },
   },
 }
 
@@ -73,7 +74,11 @@ function setup.config()
   local cmp = require 'cmp'
   local lsp_zero = require 'lsp-zero'
   local luasnip = require 'luasnip'
+  local lspkind = require 'lspkind'
 
+  mason.setup {
+    ensure_installed = { 'tsserver', 'rust_analyzer', 'lua_ls', 'typescript-language-server' },
+  }
   wkSetup()
   -- highting for LSP diagnostics
   vim.api.nvim_set_hl(0, 'CmpItemKindCopilot', {
@@ -196,6 +201,42 @@ function setup.config()
       expand = function(args)
         luasnip.lsp_expand(args.body) -- For `luasnip` users.
       end,
+    },
+    formatting = {
+      format = lspkind.cmp_format {
+        mode = 'symbol',
+        maxwidth = 50,
+        ellipse_char = '...',
+        show_item_kind = true,
+        show_labelDetails = true,
+        symbol_map = {
+          Text = '󰉿',
+          Method = '󰆧',
+          Function = '󰊕',
+          Constructor = '',
+          Field = '󰜢',
+          Variable = '󰀫',
+          Class = '󰠱',
+          Interface = '',
+          Module = '',
+          Property = '󰜢',
+          Unit = '󰑭',
+          Value = '󰎠',
+          Enum = '',
+          Keyword = '󰌋',
+          Snippet = '',
+          Color = '󰏘',
+          File = '󰈙',
+          Reference = '󰈇',
+          Folder = '󰉋',
+          EnumMember = '',
+          Constant = '󰏿',
+          Struct = '󰙅',
+          Event = '',
+          Operator = '󰆕',
+          TypeParameter = '',
+        },
+      },
     },
   }
 

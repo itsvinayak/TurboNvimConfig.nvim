@@ -22,10 +22,9 @@ function setup.config()
     highlight_changed_variables = true, -- highlight changed values with NvimDapVirtualTextChanged, else always NvimDapVirtualText
     highlight_new_as_changed = false, -- highlight new variables in the same way as changed variables (if highlight_changed_variables)
     show_stop_reason = true, -- show stop reason when stopped for exceptions
-    commented = false, -- prefix virtual text with comment string
+    commented = true, -- prefix virtual text with comment string
     only_first_definition = true, -- only show virtual text at first definition (if there are multiple)
-    all_references = false, -- show virtual text on all all references of the variable (not only definitions)
-    filter_references_pattern = '<module', -- filter references (not definitions) pattern when all_references is activated (Lua gmatch pattern, default filters out Python modules)
+    all_references = true, -- show virtual text on all all references of the variable (not only definitions)
     -- Experimental Features:
     virt_text_pos = 'eol', -- position of virtual text, see `:h nvim_buf_set_extmark()`
     all_frames = false, -- show virtual text for all stack frames not only current. Only works for debugpy on my machine.
@@ -46,11 +45,17 @@ function setup.config()
 
   require('mason-nvim-dap').setup {
     automatic_setup = true,
+    automatic_installation = true,
+    ensure_installed = {
+      'python',
+      'node2',
+      'chrome',
+      'js',
+    },
     handlers = {
       function(config)
         require('mason-nvim-dap').default_setup(config)
       end,
-      -- your dap setup
       -- python
       python = function(config)
         config.adapters = {
@@ -66,33 +71,23 @@ function setup.config()
       -- node2
       node2 = function(config)
         local js_mason_path = os.getenv 'HOME' .. '.local/share/nvim/mason/packages/node-debug2-adapter'
-        config.adapters = {
-          type = 'executable',
-          command = 'node-debug2-adapter',
-          args = {
-            '--node',
-            js_mason_path .. '/node_modules/vscode-node-debug2/out/src/nodeDebug.js',
-          },
+        local args = {
+          '--node',
+          js_mason_path .. '/node_modules/vscode-node-debug2/out/src/nodeDebug.js',
+          'node',
+          '.',
         }
-        require('mason-nvim-dap').default_setup(config) -- don't forget this!
-      end,
-      -- run node .
-      run_node_dot = function(config)
-        local js_mason_path = os.getenv 'HOME' .. '.local/share/nvim/mason/packages/node-debug2-adapter'
         config.adapters = {
           type = 'executable',
           command = 'node-debug2-adapter',
-          args = {
-            '--node',
-            js_mason_path .. '/node_modules/vscode-node-debug2/out/src/nodeDebug.js',
-            '--',
-            '.',
-          },
+          args = args,
         }
         require('mason-nvim-dap').default_setup(config) -- don't forget this!
       end,
     },
+  }
 
+  require('mason').setup {
     ensure_installed = {
       'python',
       'node2',
@@ -100,7 +95,6 @@ function setup.config()
       'js',
     },
   }
-
   -- Basic debugging keymaps, feel free to change to your liking!
   vim.keymap.set('n', 'dsc', dap.continue, { desc = 'Debug: Start/Continue' })
   vim.keymap.set('n', 'dsi', dap.step_into, { desc = 'Debug: Step Into' })

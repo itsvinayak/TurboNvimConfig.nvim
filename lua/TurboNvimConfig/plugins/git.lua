@@ -3,6 +3,17 @@ return {
     'tpope/vim-fugitive',
   },
   {
+    'f-person/git-blame.nvim',
+    event = 'BufRead', -- Load after opening a file to avoid errors
+    config = function()
+      require('gitblame').setup {
+        enable = true,
+        delay = 100,
+        highlight_group = 'comment',
+      }
+    end,
+  },
+  {
     'lewis6991/gitsigns.nvim',
     config = function()
       require('gitsigns').setup {

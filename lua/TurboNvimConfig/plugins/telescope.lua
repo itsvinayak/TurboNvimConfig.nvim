@@ -1,6 +1,5 @@
 local setup = {
   'nvim-telescope/telescope.nvim',
-  tag = '0.1.4',
   dependencies = {
     'nvim-lua/plenary.nvim',
     'joshmedeski/telescope-smart-goto.nvim',
@@ -115,9 +114,20 @@ function setup.config()
 
   telescope.setup {
     defaults = {
+      layout_config = {
+        preview_width = 0.6,
+        width = 0.9,
+        height = 0.9,
+      },
+      color_devicons = true,
+      use_less = true,
+      path_display = { 'smart' },
+      -- path_display = { 'truncate' },
+      prompt_prefix = '  ',
+      selection_caret = '  ',
+      set_env = { ['COLORTERM'] = 'truecolor' },
       -- `hidden = true` is not supported in text grep commands.
       vimgrep_arguments = vimgrep_arguments,
-      path_display = { 'truncate' },
       mappings = {
         n = {
           ['<C-w>'] = actions.send_selected_to_qflist + actions.open_qflist,
@@ -161,6 +171,9 @@ function setup.config()
       },
     },
   }
+
+  -- change telescope icons and styles
+  require('telescope').setup {}
 
   require('telescope').load_extension 'neoclip'
   require('telescope').load_extension 'fzf'

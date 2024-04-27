@@ -1,9 +1,24 @@
 return {
   {
     'stevearc/conform.nvim',
+    dependencies = {
+      'williamboman/mason.nvim',
+    },
     config = function()
       local conform = require 'conform'
-
+      require('mason').setup {
+        ensure_installed = {
+          'stylua',
+          'prettierd',
+          'prettier',
+          'eslint_d',
+          'jq',
+          'sql_formatter',
+          'htmlbeautifier',
+          'codespell',
+          'trim_whitespace',
+        },
+      }
       conform.setup {
         formatters_by_ft = {
           lua = { 'stylua' },

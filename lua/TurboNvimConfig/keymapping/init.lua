@@ -33,6 +33,9 @@ vim.api.nvim_set_keymap('n', '<leader>j', '<Cmd>lprev<CR>zz', opts)
 vim.api.nvim_set_keymap('n', '<leader>s', '[[:%s/<<C-r><C-w>>/<C-r><C-w>/gI<Left><Left><Left>]]', opts)
 vim.api.nvim_set_keymap('n', '<leader>x', '<Cmd>!chmod +x %<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>nt', '<Cmd>Neotree toggle<CR>', opts)
+-- plugin keymaps
+
+vim.api.nvim_set_keymap('n', '<leader>zm', '<Cmd>ZenMode<CR>', opts)
 
 -- Reload config mapping
 function Reload_config_function()

@@ -57,12 +57,6 @@ return {
               key = 'b',
             },
             {
-              action = '<cmd>Explore ~/.config/nvim <cr>',
-              desc = ' Edit config',
-              icon = '',
-              key = 'e',
-            },
-            {
               action = 'Lazy',
               desc = ' Lazy',
               icon = '󰒲',

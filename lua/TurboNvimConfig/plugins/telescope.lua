@@ -2,6 +2,7 @@ local setup = {
   'nvim-telescope/telescope.nvim',
   dependencies = {
     'nvim-lua/plenary.nvim',
+    'nvim-lua/popup.nvim',
     'joshmedeski/telescope-smart-goto.nvim',
     {
       'nvim-telescope/telescope-fzf-native.nvim',

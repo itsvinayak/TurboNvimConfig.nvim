@@ -39,6 +39,7 @@ vim.opt.termguicolors = true
 vim.opt.guicursor = 'n-v-c:block-Cursor/lCursor-blinkon0,i-ci-ve:ver25-Cursor/lCursor,r-cr:hor20-Cursor/lCursor'
 vim.opt.nu = true
 vim.opt.relativenumber = true
+vim.opt.wrap = false
 
 vim.cmd 'filetype plugin on'
 vim.cmd 'syntax on'

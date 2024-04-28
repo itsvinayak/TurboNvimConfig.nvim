@@ -84,7 +84,7 @@ return {
     'rebelot/kanagawa.nvim',
     config = function()
       require('kanagawa').setup {
-        dimInactive = false, -- dim inactive window `:h hl-NormalNC`
+        dimInactive = true, -- dim inactive window `:h hl-NormalNC`
       }
     end,
   },

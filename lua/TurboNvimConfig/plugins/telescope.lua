@@ -30,6 +30,7 @@ local setup = {
       dependencies = { 'nvim-telescope/telescope.nvim', 'tpope/vim-fugitive', 'tpope/vim-rhubarb' },
     },
     'jemag/telescope-diff.nvim',
+    'nvim-telescope/telescope-media-files.nvim',
   },
 }
 
@@ -183,6 +184,7 @@ function setup.config()
   require('telescope').load_extension 'live_grep_args'
   require('telescope').load_extension 'colors'
   require('telescope').load_extension 'diff'
+  require('telescope').load_extension 'media_files'
 end
 
 return setup

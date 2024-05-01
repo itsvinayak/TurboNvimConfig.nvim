@@ -87,6 +87,14 @@ function setup.config()
   end, {
     desc = 'Compare file with current',
   })
+  -- search all buffers
+  vim.keymap.set('n', '<leader>lb', function()
+    require('telescope.builtin').buffers {
+      show_all_buffers = true,
+    }
+  end, {
+    desc = 'Search all buffers',
+  })
 
   -- Clone the default Telescope configuration
   local vimgrep_arguments = { unpack(telescopeConfig.values.vimgrep_arguments) }

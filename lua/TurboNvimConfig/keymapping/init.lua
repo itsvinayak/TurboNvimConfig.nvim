@@ -8,6 +8,8 @@ vim.api.nvim_set_keymap('n', 'J', 'mzJ`z', opts)
 vim.api.nvim_set_keymap('n', '<C-d>', '<C-d>zz', opts)
 vim.api.nvim_set_keymap('n', '<C-u>', '<C-u>zz', opts)
 
+
+-- manage tabs
 vim.api.nvim_set_keymap('n', '<C-TAB>', '<Cmd>tabprevious<CR>', opts)
 vim.api.nvim_set_keymap('n', '<TAB>', '<Cmd>tabnext<CR>', opts)
 vim.api.nvim_set_keymap('n', '<C-n>', '<Cmd>tabnew<CR>', opts)

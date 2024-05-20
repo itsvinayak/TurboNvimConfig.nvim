@@ -53,4 +53,6 @@ vim.cmd [[
   augroup END
 ]]
 
+vim.deprecate = function() end
+
 return {}

@@ -49,6 +49,7 @@ require('lazy').setup {
     require 'TurboNvimConfig.plugins.fidget',
     require 'TurboNvimConfig.plugins.trouble',
     require 'TurboNvimConfig.plugins.highlight-undo',
+    require 'TurboNvimConfig.plugins.garbage-day',
   },
   checker = { enabled = true },
 }

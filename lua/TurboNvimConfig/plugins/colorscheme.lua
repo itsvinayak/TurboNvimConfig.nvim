@@ -88,4 +88,13 @@ return {
       }
     end,
   },
+  -- https://github.com/dgox16/oldworld.nvim
+  {
+    'dgox16/oldworld.nvim',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require('oldworld').setup()
+    end,
+  },
 }

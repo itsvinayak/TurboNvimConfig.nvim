@@ -8,7 +8,6 @@ vim.api.nvim_set_keymap('n', 'J', 'mzJ`z', opts)
 vim.api.nvim_set_keymap('n', '<C-d>', '<C-d>zz', opts)
 vim.api.nvim_set_keymap('n', '<C-u>', '<C-u>zz', opts)
 
-
 -- manage tabs
 vim.api.nvim_set_keymap('n', '<C-TAB>', '<Cmd>tabprevious<CR>', opts)
 vim.api.nvim_set_keymap('n', '<TAB>', '<Cmd>tabnext<CR>', opts)
@@ -46,5 +45,9 @@ function Reload_config_function()
 end
 
 vim.api.nvim_set_keymap('n', '<leader><leader>', ':lua Reload_config_function()<CR>', opts)
+
+-- terminal mappings
+-- open terminal from below
+vim.api.nvim_set_keymap('n', '<leader>tt', '<Cmd>below 10sp term://zsh<CR>', opts)
 
 return {}

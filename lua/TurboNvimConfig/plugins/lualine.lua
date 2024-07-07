@@ -190,26 +190,19 @@ ins_left {
 ins_left {
   -- Lsp server name .
   function()
-    local msg = 'No Active Lsp' -- Default message if no active LSP is found
-    local buf_ft = vim.bo.filetype -- Get the filetype of the current buffer
-    local clients = vim.lsp.buf_get_clients() -- Get active LSP clients for the current buffer
-
+    local msg = 'No Active Lsp'
+    local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
+    local clients = vim.lsp.get_active_clients()
     if next(clients) == nil then
       return msg
     end
     for _, client in ipairs(clients) do
-      local filetypes = client.LualineConfig.filetypes
-      if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-        return client.name
-      end
+      return client.name
     end
     return msg
   end,
-  icon = ' LSP:',
-  color = {
-    fg = '#ffffff',
-    gui = 'bold',
-  },
+  icon = ' ',
+  color = { fg = colors.violet, gui = 'bold' },
 }
 
 -- Add components to right sections

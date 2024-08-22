@@ -50,7 +50,6 @@ require('lazy').setup {
     require 'TurboNvimConfig.plugins.fidget',
     require 'TurboNvimConfig.plugins.trouble',
     require 'TurboNvimConfig.plugins.highlight-undo',
-    -- require 'TurboNvimConfig.plugins.image',
   },
   checker = { enabled = true },
 }

@@ -52,6 +52,7 @@ require('lazy').setup {
     require 'TurboNvimConfig.plugins.highlight-undo',
     require 'TurboNvimConfig.plugins.todo-comments',
     require 'TurboNvimConfig.plugins.flash',
+    require 'TurboNvimConfig.plugins.markdown',
   },
   checker = { enabled = true },
 }

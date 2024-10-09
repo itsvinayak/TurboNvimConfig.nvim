@@ -27,6 +27,22 @@ local setup = {
       end,
     },
   },
+  config = function()
+    if pcall(require, 'which-key') then
+      local wk = require 'which-key'
+      wk.add {
+        ['<leader>'] = {
+          n = {
+            name = '+neotree',
+            t = { '<cmd>NeotreeToggle<CR>', 'Toggle' },
+            r = { '<cmd>NeotreeRefresh<CR>', 'Refresh' },
+            f = { '<cmd>NeotreeFind<CR>', 'Find' },
+            c = { '<cmd>NeotreeClose<CR>', 'Close' },
+          },
+        },
+      }
+    end
+  end,
 }
 
 return setup

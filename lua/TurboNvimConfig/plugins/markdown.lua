@@ -6,6 +6,18 @@ local setup = {
     vim.g.mkdp_filetypes = { 'markdown' }
   end,
   ft = { 'markdown' },
+  config = function()
+    if pcall(require, 'which-key') then
+      local wk = require 'which-key'
+      wk.register {
+        ['<leader>mp'] = {
+          name = '+markdown-preview',
+          t = { '<cmd>MarkdownPreviewToggle<CR>', 'Toggle' },
+          s = { '<cmd>MarkdownPreviewStop<CR>', 'Stop' },
+        },
+      }
+    end
+  end,
 }
 
 return setup

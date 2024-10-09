@@ -14,17 +14,13 @@ return {
         filetype = 'txt', -- Sets the notes filetype default is 'md'
       }
 
-      -- Setup WhichKey mappings using `add`
+      -- Add WhichKey mappings (optional)
       if pcall(require, 'which-key') then
         local wk = require 'which-key'
-
-        -- Corrected mappings using the new `add` method
         wk.add {
-          ['<leader>n'] = { name = 'Notes' }, -- Group name for notes
-
-          ['<leader>nw'] = { ':Notes write<CR>', 'Write a new note' },
-          ['<leader>nf'] = { ':Notes find<CR>', 'Find notes by title' },
-          ['<leader>ng'] = { ':Notes get<CR>', 'Get a list of all notes' },
+          { '<leader>nw', 'New Note' },
+          { '<leader>nf', 'Find Note' },
+          { '<leader>ng', 'Get Note' },
         }
       end
     end,

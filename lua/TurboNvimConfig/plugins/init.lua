@@ -53,6 +53,7 @@ require('lazy').setup {
     require 'TurboNvimConfig.plugins.todo-comments',
     require 'TurboNvimConfig.plugins.flash',
     require 'TurboNvimConfig.plugins.markdown',
+    require 'TurboNvimConfig.plugins.notes',
   },
   checker = { enabled = true },
 }

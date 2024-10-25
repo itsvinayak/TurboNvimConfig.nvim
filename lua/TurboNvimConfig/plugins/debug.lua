@@ -77,6 +77,7 @@ function setup.config()
           'node',
           '.',
         }
+
         config.adapters = {
           type = 'executable',
           command = 'node-debug2-adapter',

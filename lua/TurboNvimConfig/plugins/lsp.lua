@@ -7,7 +7,7 @@ local setup = {
     { -- Optional
       'williamboman/mason.nvim',
       build = function()
-        pcall(vim.cmd, 'MasonUpdate')
+        vim.cmd 'MasonUpdate'
       end,
     },
     { 'williamboman/mason-lspconfig.nvim' }, -- Optional
@@ -27,7 +27,7 @@ local setup = {
 local function wkSetup()
   local wk = require 'which-key'
   wk.register {
-    ['<leader>la'] = { '<cmd>lua vim.lsp.buf.code_action()<cr>', 'Code Action' },
+    ['<leader>lca'] = { '<cmd>lua vim.lsp.buf.code_action()<cr>', 'Code Action' },
     ['<leader>lf'] = {
       "<cmd>lua vim.lsp.buf.format({async = true, filter = function(client) return client.name ~= 'typescript-tools' end})<cr>",
       'Format',

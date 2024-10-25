@@ -33,6 +33,7 @@ require('lazy').setup {
     require 'TurboNvimConfig.plugins.neo-tree',
     require 'TurboNvimConfig.plugins.indent-blankline',
     { 'wakatime/vim-wakatime' },
+    { 'mcauley-penney/visual-whitespace.nvim' },
     require 'TurboNvimConfig.plugins.which-key',
     require 'TurboNvimConfig.plugins.undotree',
     require 'TurboNvimConfig.plugins.zen-mode',
@@ -55,7 +56,7 @@ require('lazy').setup {
     require 'TurboNvimConfig.plugins.markdown',
     require 'TurboNvimConfig.plugins.notes',
   },
-  checker = { enabled = true },
+  checker = { enabled = true, notify = false },
 }
 
 -- ===============================================================================

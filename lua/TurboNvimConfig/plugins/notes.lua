@@ -9,7 +9,7 @@ return {
       require('notes').setup {
         -- Optional configurations
         path = '~/.my_notes', -- Custom path for notes (default is '~/.notes')
-        log_enabled = true, -- Enable logging (default is false)
+        log_enabled = false, -- Enable logging (default is false)
         log_level = 'INFO', -- Set log level to INFO
         filetype = 'txt', -- Sets the notes filetype default is 'md'
       }

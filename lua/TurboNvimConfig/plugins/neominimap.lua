@@ -14,7 +14,7 @@ local setup = {
     vim.opt.wrap = false -- Recommended
     vim.opt.sidescrolloff = 36 -- It's recommended to set a large value
     vim.g.neominimap = {
-      auto_enable = true,
+      auto_enable = false,
       minimap_width = 10, ---@type integer,
       click = {
         -- Enable mouse click on minimap

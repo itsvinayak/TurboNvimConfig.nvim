@@ -1,0 +1,26 @@
+#!/bin/sh
+
+
+# Ensure ~/.cargo/bin is in PATH for Stylua
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# Check if stylua is installed
+if ! (which stylua &> /dev/null); then
+  echo "❌ Stylua is not installed or not in PATH."
+  echo "👉 Please install it before committing:"
+  echo "   - For Linux/macOS: cargo install stylua"
+  echo "   - For Windows (scoop): scoop install stylua"
+  echo "   - For Windows (choco): choco install stylua"
+  echo "   - Ensure ~/.cargo/bin is in your PATH"
+  exit 1
+fi
+
+
+# Run stylua check
+if ! (stylua --check .); then
+  echo "❌ Stylua check failed. Please format your code before committing."
+  exit 1
+fi
+
+echo "✅ Stylua check passed. Proceeding with commit."
+

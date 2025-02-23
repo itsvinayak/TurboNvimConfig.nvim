@@ -7,7 +7,6 @@ local header = [[
 ▀▀    ▀▀   ▝▀▀▀▀▀     ▀▀▀▀       ▀▀     ▀▀  ▀▀  ▀▀  ▀▀
 ]]
 
-
 return {
   {
     'nvimdev/dashboard-nvim',

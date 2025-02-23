@@ -21,10 +21,11 @@
 
 # Index
 
-  1. [Introduction](#introduction)
-  2. [Installation](#installation)
-  3. [Neovim Installation and Configuration via Docker](#neovim-installation-and-configuration-via-docker)
-  4. [Recommended GUI Client](#recommended-gui-client)
+  1. [Introduction](#-introduction)
+  2. [Installation](#-installation)
+  3. [Project Structure](#-project-structure)
+  4. [Neovim Installation and Configuration via Docker](#-neovim-installation-and-configuration-via-docker)
+  5. [Recommended GUI Client](#-recommended-gui-client)
 
 ## Introduction
 
@@ -34,6 +35,26 @@ TurboNvimConfig is a minimalist starting point for configuring Neovim, designed 
 [![Docker Image CI](https://github.com/itsvinayak/TurboNvimConfig.nvim/actions/workflows/docker-image.yml/badge.svg)](https://github.com/itsvinayak/TurboNvimConfig.nvim/actions/workflows/docker-image.yml)
 
 ![Screenshot from 2024-03-14 23-36-51](https://github.com/itsvinayak/TurboNvimConfig.nvim/assets/33996594/a068dea3-58d6-4c23-8cf2-3b19f959964f)
+
+
+##  Project Structure
+
+```sh
+└── TurboNvimConfig.nvim/
+    ├── .github
+    │   └── workflows
+    ├── LICENSE
+    ├── README.md
+    ├── docker
+    │   ├── Dockerfile
+    │   └── run-docker.sh
+    ├── init.lua
+    └── lua
+        ├── TurboNvimConfig
+        └── custom
+```
+
+
 
 ## Installation
 
@@ -56,9 +77,9 @@ To install TurboNvimConfig and set it up as your Neovim configuration, follow th
 - Launch Neovim:
   Open Neovim by running nvim in your terminal.
 - Install Plugins:
-  Upon first launch, Neovim will automatically install plugins specified in the configuration file. This might take a few moments depending on your internet connection.
+  Neovim will automatically install plugins specified in the configuration file upon the first launch. This might take a few moments depending on your internet connection.
 - Additional Configuration:
-  Optionally, you can further customize TurboNvimConfig to suit your preferences by editing the init.vim file located at ~/.config/nvim/init.vim.
+  Optionally, you can customize TurboNvimConfig by editing the init to suit your preferences.vim file located at ~/.config/nvim/init.vim.
 - Restart Neovim:
   After making any customizations or adjustments to the configuration, restart Neovim to apply the changes.
 
